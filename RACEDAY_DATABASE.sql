@@ -42,6 +42,7 @@ CREATE TABLE [User]
     Password VARCHAR(255) NOT NULL,
 
     Role VARCHAR(20) NOT NULL
+    CHECK (Role IN ('Organiser', 'Participant'))
 );
 GO
 
