@@ -63,8 +63,8 @@ CREATE TABLE Event
 
     Location VARCHAR(150) NOT NULL,
 
-    Distance DECIMAL(6,2) NOT NULL,
-
+    Distance DECIMAL(6,2) NOT NULL
+    CHECK (Distance > 0),
     EventType VARCHAR(50) NOT NULL,
 
     OrganiserID INT NOT NULL,
