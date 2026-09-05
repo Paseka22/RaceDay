@@ -1,0 +1,27 @@
+name: RaceDay Part 1 CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check required Part 1 files
+        run: |
+          test -f "API endpoint.pdf"
+          test -f "RACEDAY_DATABASE.sql"
+          test -f "Untitled Diagram.drawio"
+          test -f "README.md"
+
+      - name: Validation successful
+        run: echo "RaceDay Part 1 files validated successfully."
